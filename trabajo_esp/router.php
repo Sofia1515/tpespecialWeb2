@@ -49,6 +49,10 @@ case 'listar-artistas';
         $controller = new CategoriesController();
         $controller->editArtista($params[1]);
         break;
+    case 'artistas-admin':
+        $controller = new CategoriesController();
+        $controller->showAdmin();
+        break;
     case 'send-edit':
         $controller = new CategoriesController();
         $controller->sendEditArtista();

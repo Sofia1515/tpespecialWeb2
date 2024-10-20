@@ -1,27 +1,31 @@
 <?php
-/* Smarty version 4.2.1, created on 2024-10-21 01:42:48
-  from 'C:\apache\htdocs\tpespecialWeb2\trabajo_esp\app\templates\categories.tpl' */
+/* Smarty version 4.2.1, created on 2024-10-21 01:47:22
+  from 'C:\apache\htdocs\tpespecialWeb2\trabajo_esp\app\templates\categories-admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_67159578e06380_43646657',
+  'unifunc' => 'content_6715968a0f94a2_23142301',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'b27c2ffb4ce1645d85b4ddf06d72e93f2b04c03f' => 
+    '33de7dd21d4ea4b9803493562bee00f82d3f069c' => 
     array (
-      0 => 'C:\\apache\\htdocs\\tpespecialWeb2\\trabajo_esp\\app\\templates\\categories.tpl',
-      1 => 1729467290,
+      0 => 'C:\\apache\\htdocs\\tpespecialWeb2\\trabajo_esp\\app\\templates\\categories-admin.tpl',
+      1 => 1729468029,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:app/templates/form_alta.tpl' => 1,
   ),
 ),false)) {
-function content_67159578e06380_43646657 (Smarty_Internal_Template $_smarty_tpl) {
-?><ul>
+function content_6715968a0f94a2_23142301 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:app/templates/form_alta.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<ul>
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category');
 $_smarty_tpl->tpl_vars['category']->do_else = true;
@@ -38,8 +42,12 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 </span>
                 </div>
                 <div>
-                    <a href="ver-canciones/<?php echo $_smarty_tpl->tpl_vars['category']->value->id_artista;?>
-" type="button">Ver Canciones</a>
+                    <a href="eliminar/<?php echo $_smarty_tpl->tpl_vars['category']->value->id_artista;?>
+" type="button">borrar</a>
+                </div>
+                <div>
+                    <a href="editar/<?php echo $_smarty_tpl->tpl_vars['category']->value->id_artista;?>
+" type="button">editar</a>
                 </div>
             </li>
         <?php

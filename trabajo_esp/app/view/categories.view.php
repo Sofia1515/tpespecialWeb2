@@ -16,6 +16,11 @@ class categoriesView{
         $this->smarty->display('app/templates/categories.tpl');
     }
 
+    function showCategoriesAdmin($categories) {
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display('app/templates/categories-admin.tpl');
+    }
+
     function showError($msj){
         echo "<h1>ERROR</h1>";
         echo "<h2> $msj </h2>";
