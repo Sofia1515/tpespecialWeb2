@@ -5,22 +5,18 @@ require_once './templates/layout/header.phtml';
 ?>
 <h1>AGREGA UNA CANCION NUEVA</h1>
 <?php
-
-var_dump($tasks_artistas);
-var_dump($tasks_canciones);
 require_once './templates/form.add.canciones.phtml';
-
 ?>
 
 <ul class="list-group">
     <h2>CANCIONES</h2>
-<?php foreach($tasks as $task) { ?>
+<?php foreach($tasks_canciones as $task_cancione) { ?>
     <li class="list-group-item item-task">
         <div>
-            <b> <?php echo $task->nombre_cancion ?></b> | <?php echo $task->top_cancion ?> | <?php echo $task->duracion ?> | <?php echo $task->genero ?>
+            <b> <?php echo $task_cancione->nombre_cancion ?></b> | <?php echo $task_cancione->top_cancion ?> | <?php echo $task_cancione->duracion ?> | <?php echo $task_cancione->genero ?>
         </div>
         <div class="actions">
-            <a href="eliminar_cancion/<?php echo $task->id_cancion ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+            <a href="eliminar_cancion/<?php echo $task_cancione->id_cancion ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
         </div>
     </li>
 <?php } ?>
