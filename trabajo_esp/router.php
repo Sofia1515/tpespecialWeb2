@@ -31,7 +31,6 @@ $params = explode('/', $action);
 // determina que camino seguir según la acción
 switch ($params[0]) {
     case 'listar':
-        //sessionAuthMiddleware($res);
         $controller = new CancionesController();
         $controller->showAllCanciones();
         break;

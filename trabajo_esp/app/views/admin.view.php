@@ -2,7 +2,7 @@
 
 class AdminView {
 
-    function showAdmin_canciones($tasks_canciones, $tasks_artistast) {
+    function showAdmin_canciones($tasks_canciones, $tasks_artistas) {
         require_once './templates/admin.canciones.phtml';
     }
 
