@@ -35,17 +35,17 @@ class AuthController {
         // Verificar que el usuario está en la base de datos
         $userFromDB = $this->model->getUserByEmail($email);
 
-        // password: 123456
-        // $userFromDB->password: $2y$10$xQop0wF1YJ/dKhZcWDqHceUM96S04u73zGeJtU80a1GmM.H5H0EHC
+        
         if($userFromDB && password_verify($password, $userFromDB->password)){
             // Guardo en la sesión el ID del usuario
             session_start();
-            $_SESSION['ID_USER'] = $userFromDB->id;
+            $_SESSION['ID_USER'] = $userFromDB->id_usuario;
             $_SESSION['EMAIL_USER'] = $userFromDB->email;
             $_SESSION['LAST_ACTIVITY'] = time();
     
-            // Redirijo al home
-            header('Location: ' . BASE_URL . '');
+            // Redirijo al area admin
+            header('Location: ' . BASE_URL . 'admin');
+            die();
         } else {
             return $this->view->showLogin('Credenciales incorrectas');
         }

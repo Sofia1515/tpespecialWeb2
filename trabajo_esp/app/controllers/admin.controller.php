@@ -1,6 +1,7 @@
 <?php
 include_once './app/models/admin.model.php';
 include_once './app/views/admin.view.php';
+include_once './app/middlewares/session.Auth.Middleware.php';
 
 
 class AdminController {
