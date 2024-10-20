@@ -1,0 +1,54 @@
+<?php
+
+require_once './templates/layout/header.phtml';
+    
+?>
+<form action="<?php echo BASE_URL; ?>actualizar_cancion" method="POST" class="my-4">
+    <input type="hidden" name="id" value="<?php echo $cancion->id_cancion; ?>">
+    <div>
+        <div class="col-9">
+            <div class="form-group">
+                <label>Autor de la canción</label>
+                <select required name="autor" class="form-control">
+                    <option value="" disabled>Seleccione un autor</option>
+                    <?php foreach ($tasks_artistas as $artista) { ?>
+                        <option value="<?php echo $artista->id_artista; ?>" <?php echo ($artista->id_artista == $cancion->id_artista) ? 'selected' : ''; ?>><?php echo $artista->nombre_artista; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="form-group">
+                <label>Nombre de la canción</label>
+                <input required name="name" type="text" class="form-control" value="<?php echo $cancion->nombre_cancion; ?>">
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="form-group">
+                <label>En qué top está esta canción</label>
+                <input required name="top" type="int" class="form-control" value="<?php echo $cancion->top_cancion; ?>">
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="form-group">
+                <label>Duración de la canción</label>
+                <input required name="duracion" type="time" class="form-control" value="<?php echo $cancion->duracion; ?>">
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="form-group">
+                <label>Género de la canción</label>
+                <input required name="genero" type="text" class="form-control" value="<?php echo $cancion->genero; ?>">
+            </div>
+        </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Guardar cambios</button>
+</form>
+
+<?php
+require_once './templates/layout/footer.phtml';

@@ -1,4 +1,6 @@
 <?php
+require_once './cerrar.session.php';
+
 require_once './app/libs/response.php';
 require_once './app/middlewares/session.Auth.Middleware.php';
 
@@ -63,7 +65,7 @@ case 'listar-artistas';
         about();
         break;
     case 'admin':
-        //sessionAuthMiddleware($res);
+        sessionAuthMiddleware($res);
         $controller = new AdminController();
         $controller->showAdmin();
         break;
@@ -72,14 +74,24 @@ case 'listar-artistas';
         $controller->showCanciones($params[1]);
         break;
     case 'agregar_cancion':
-        //sessionAuthMiddleware($res);
+        sessionAuthMiddleware($res);
         $controller = new AdminController();
         $controller->addCancion();
         break;
     case 'eliminar_cancion':
-        //sessionAuthMiddleware($res);
+        sessionAuthMiddleware($res);
         $controller = new AdminController();
         $controller->removeCancion($params[1]);
+        break;
+    case 'editar_cancion':
+        sessionAuthMiddleware($res);
+        $controller = new AdminController();
+        $controller->editCancion($params[1]);
+        break;
+    case 'actualizar_cancion':
+        sessionAuthMiddleware($res);
+        $controller = new AdminController();
+        $controller->updateCancion();
         break;
     case 'showLogin':
         $controller = new AuthController();
@@ -89,6 +101,9 @@ case 'listar-artistas';
         $controller = new AuthController();
         $controller->login();
         break;
+    case 'logout':
+        $controller = new LogoutController();
+        $controller->logout();
     default:
         header("HTTP/1.0 404 not found");
         echo('404 Page not found'); 
