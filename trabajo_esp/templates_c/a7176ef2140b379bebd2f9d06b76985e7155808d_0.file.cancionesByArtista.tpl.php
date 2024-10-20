@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2024-10-20 05:57:04
+/* Smarty version 4.2.1, created on 2024-10-20 06:44:04
   from 'C:\apache\htdocs\tpespecialWeb2\trabajo_esp\app\templates\cancionesByArtista.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_67147f90839925_28809418',
+  'unifunc' => 'content_67148a94464b73_46442348',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a7176ef2140b379bebd2f9d06b76985e7155808d' => 
     array (
       0 => 'C:\\apache\\htdocs\\tpespecialWeb2\\trabajo_esp\\app\\templates\\cancionesByArtista.tpl',
-      1 => 1729314658,
+      1 => 1729399435,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67147f90839925_28809418 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67148a94464b73_46442348 (Smarty_Internal_Template $_smarty_tpl) {
 ?><ul>
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['canciones']->value, 'cancion');
@@ -34,7 +34,7 @@ $_smarty_tpl->tpl_vars['cancion']->do_else = false;
 </span>
                     <span><?php echo $_smarty_tpl->tpl_vars['cancion']->value->genero;?>
 </span>
-                    <span><?php echo $_smarty_tpl->tpl_vars['cancion']->value->duracion_cancion;?>
+                    <span><?php echo $_smarty_tpl->tpl_vars['cancion']->value->duracion;?>
 </span>
                 </div>
             </li>

@@ -4,7 +4,7 @@
                 <div>
                     <span>{$cancion->nombre_cancion}</span>
                     <span>{$cancion->genero}</span>
-                    <span>{$cancion->duracion_cancion}</span>
+                    <span>{$cancion->duracion}</span>
                 </div>
             </li>
         {/foreach}
