@@ -4,6 +4,7 @@ require_once './app/middlewares/session.Auth.Middleware.php';
 
 require_once './app/controllers/admin.controller.php';
 require_once './app/controllers/canciones.controller.php';
+require_once './app/controller/categories.controller.php';
 
 require_once './app/controllers/auth.controller.php';
 

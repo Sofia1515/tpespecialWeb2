@@ -28,7 +28,7 @@ class CategoriesController{
         $id = $this->model->insertArtista($nombre, $fechaNacimiento, $pais);
         
         if ($id) {
-            header('Location: ' . BASE_URL);
+            header('Location: ' . BASE_URL . 'listar-artistas');
         } else {
             $this->view->showError("hay un error");
         }
@@ -43,7 +43,7 @@ class CategoriesController{
         $updatedRows = $this->model->updateArtista($id, $nombre, $fechaNacimiento, $pais);
         
         if ($updatedRows > 0) {
-            header('Location: ' . BASE_URL);
+            header('Location: ' . BASE_URL . 'listar-artistas');
         } else {
             $this->view->showError("hay un error");
         }
@@ -52,7 +52,7 @@ class CategoriesController{
 
     function removeArtista($id) {
         $this->model->deleteCategory($id);
-        header('Location: ' . BASE_URL);
+        header('Location: ' . BASE_URL . 'listar-artistas');
     }
 
     function listarCancionesArtista($id) {
