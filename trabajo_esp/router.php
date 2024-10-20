@@ -6,6 +6,7 @@ require_once './app/middlewares/session.Auth.Middleware.php';
 
 require_once './app/controllers/admin.controller.php';
 require_once './app/controllers/canciones.controller.php';
+require_once './app/controller/categories.controller.php';
 
 require_once './app/controllers/auth.controller.php';
 
@@ -32,6 +33,30 @@ $params = explode('/', $action);
 
 // determina que camino seguir según la acción
 switch ($params[0]) {
+case 'listar-artistas';
+        $controller = new CategoriesController();
+        $controller->show();
+        break;
+    case 'agregar':
+        $controller = new CategoriesController();
+        $controller->addArtista();
+        break;
+    case 'eliminar':
+        $controller = new CategoriesController();
+        $controller->removeArtista($params[1]);
+        break;
+    case 'editar':
+        $controller = new CategoriesController();
+        $controller->editArtista($params[1]);
+        break;
+    case 'send-edit':
+        $controller = new CategoriesController();
+        $controller->sendEditArtista();
+        break;
+    case 'ver-canciones':
+        $controller = new CategoriesController();
+        $controller->listarCancionesArtista($params[1]);
+        break;
     case 'listar':
         $controller = new CancionesController();
         $controller->showAllCanciones();
