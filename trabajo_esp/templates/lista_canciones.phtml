@@ -1,0 +1,21 @@
+<?php
+    
+    require_once './templates/layout/header.phtml';
+
+    ?>
+    
+    <ul class="list-group">
+        <?php foreach($tasks as $task) { ?>
+            <li class="list-group-item item-task">
+                <div>
+                    <b> <?php echo $task->nombre_cancion ?></b>
+                    <a href="canciones/<?php echo $task->id_artista ?>" type="button" class="btn btn-outline-secondary">VER MAS:</a>
+                </div>
+            </li>
+        <?php 
+        } 
+        ?>
+    </ul>
+    
+    <?php
+    require_once './templates/layout/footer.phtml';

@@ -1,0 +1,52 @@
+
+
+<form action="agregar_cancion" method="POST" class="my-4">
+    <div>
+        <div class="col-9">
+            <div class="form-group">
+                <label>Autor de la cancion</label>
+                <select required name="autor" class="form-control">
+                    <option value="" disabled selected>Seleccione un autor</option>
+                    <?php if (isset($tasks_artistas) && !empty($tasks_artistas)) {
+                        foreach ($tasks_artistas as $artista) { ?>
+                            <option value="<?php echo $artista->id_artista; ?>"><?php echo $artista->nombre_artista; ?></option>
+                        <?php }
+                    } else { ?>
+                        <option value="" disabled>No hay artistas disponibles</option>
+                    <?php } ?>
+                </select>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="form-group">
+                <label>Nombre de la cancion</label>
+                <input required name="name" type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="form-group">
+                <label>en que top esta esta cancion</label>
+                <input required name="top" type="int" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="form-group">
+                <label>duracion de la cancion</label>
+                <input required name="duracion" type="time" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="form-group">
+                <label>genero de la cancion</label>
+                <input required name="genero" type="text" class="form-control">
+            </div>
+        </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+
+</form>
