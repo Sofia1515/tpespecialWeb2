@@ -1,0 +1,32 @@
+<?php
+//require_once './layout/header.phtml'?>  
+
+<?php if ($error): ?>
+    <div class='alert alert-danger' role='alert'>
+        <?= $error ?>
+    </div>
+<?php endif ?>
+
+<form action="login" method="POST" class="my-4">
+    <div>
+        <div class="col-9">
+            <div class="form-group">
+                <label for='email'>ingrese email</label>
+                <input required name="email" type="email" class="form-control">
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="form-group">
+                <label for='password'>ingrese password</label>
+                <input required name="password" type="password" class="form-control">
+            </div>
+        </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Login</button>
+
+</form>
+
+<?php
+//require_once './layout/footer.phtml' ?>

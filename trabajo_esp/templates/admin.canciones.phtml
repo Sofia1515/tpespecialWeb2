@@ -1,0 +1,30 @@
+<?php
+
+require_once './templates/layout/header.phtml';
+    
+?>
+<h1>AGREGA UNA CANCION NUEVA</h1>
+<?php
+
+var_dump($tasks_artistas);
+var_dump($tasks_canciones);
+require_once './templates/form.add.canciones.phtml';
+
+?>
+
+<ul class="list-group">
+    <h2>CANCIONES</h2>
+<?php foreach($tasks as $task) { ?>
+    <li class="list-group-item item-task">
+        <div>
+            <b> <?php echo $task->nombre_cancion ?></b> | <?php echo $task->top_cancion ?> | <?php echo $task->duracion ?> | <?php echo $task->genero ?>
+        </div>
+        <div class="actions">
+            <a href="eliminar_cancion/<?php echo $task->id_cancion ?>" type="button" class='btn btn-danger ml-auto'>Borrar</a>
+        </div>
+    </li>
+<?php } ?>
+</ul>
+
+<?php
+require_once './templates/layout/footer.phtml';

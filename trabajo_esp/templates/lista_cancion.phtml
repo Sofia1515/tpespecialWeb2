@@ -1,0 +1,20 @@
+<?php
+    
+    require_once './templates/layout/header.phtml';
+
+    ?>
+    
+    <ul class="list-group">
+        <?php foreach($tasks as $task) { ?>
+            <li class="list-group-item item-task">
+                <div>
+                <b> <?php echo $task->nombre_cancion ?></b> | <?php echo $task->top_cancion ?> | <?php echo $task->duracion ?> | <?php echo $task->genero ?>
+                </div>
+            </li>
+        <?php 
+        } 
+        ?>
+    </ul>
+    
+    <?php
+    require_once './templates/layout/footer.phtml';
