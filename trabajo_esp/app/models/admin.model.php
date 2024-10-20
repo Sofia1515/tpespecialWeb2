@@ -6,7 +6,7 @@ class AdminModel {
         return new PDO('mysql:host=localhost;dbname=play_music;charset=utf8', 'root' , '');
     }
     
-    
+    //trae artistas para mostrar en el form
     function getAll_artistas() {
         $db = $this->getConection();
 
@@ -47,5 +47,22 @@ class AdminModel {
         $query = $db->prepare('DELETE FROM canciones WHERE id_cancion = ?');
         $query->execute([$id]);
     }
+
+    // update cancion
+    function getCancionById($id) {
+        $db = $this->getConection();
+        $query = $db->prepare('SELECT * FROM canciones WHERE id_cancion = ?');
+        $query->execute([$id]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+
+    // Actualizar una canción
+    function updateCancion($id, $autor, $name, $top, $duracion, $genero) {
+        $db = $this->getConection();
+
+        $query = $db->prepare('UPDATE canciones SET id_artista = ?, nombre_cancion = ?, top_cancion = ?, duracion = ?, genero = ? WHERE id_cancion = ?');
+        return $query->execute([$autor, $name, $top, $duracion, $genero, $id]);
+    }
+
 
 }

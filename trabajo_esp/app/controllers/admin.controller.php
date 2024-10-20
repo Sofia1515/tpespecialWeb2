@@ -45,4 +45,36 @@ class AdminController {
         header('location: ' . BASE_URL.'admin');
     }
 
+    //update cancion
+    function editCancion($id) {
+        error_log("ID recibido en editCancion: " . $id);
+        $cancion = $this->model->getCancionById($id);
+        
+        if (!$cancion) {
+          $this->view->admin_showError('Canción no encontrada');
+            return;
+        }
+        $tasks_artistas = $this->model->getAll_artistas(); // Obtener artistas para el select
+        $this->view->showEditCancion($cancion, $tasks_artistas);
+    }
+    
+
+    // Procesar la actualización de la canción
+    function updateCancion() {
+        $id = $_POST['id'];
+        $autor = $_POST['autor'];
+        $name = $_POST['name'];
+        $top = $_POST['top'];
+        $duracion = $_POST['duracion'];
+        $genero = $_POST['genero'];
+
+        $result = $this->model->updateCancion($id, $autor, $name, $top, $duracion, $genero);
+
+        if ($result) {
+            header('location: ' . BASE_URL . 'admin');
+        } else {
+            $this->view->admin_showError('No se pudo actualizar la canción');
+        }
+    }
+
 }

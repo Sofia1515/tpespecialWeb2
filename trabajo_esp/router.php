@@ -56,6 +56,14 @@ switch ($params[0]) {
         $controller = new AdminController();
         $controller->removeCancion($params[1]);
         break;
+    case 'editar_cancion':
+        $controller = new AdminController();
+        $controller->editCancion($params[1]);
+        break;
+    case 'actualizar_cancion':
+        $controller = new AdminController();
+        $controller->updateCancion();
+        break;
     case 'showLogin':
         $controller = new AuthController();
         $controller->showLogin();
