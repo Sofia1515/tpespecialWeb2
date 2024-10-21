@@ -50,6 +50,7 @@ case 'listar-artistas';
         $controller->editArtista($params[1]);
         break;
     case 'artistas-admin':
+        sessionAuthMiddleware($res);
         $controller = new CategoriesController();
         $controller->showAdmin();
         break;
